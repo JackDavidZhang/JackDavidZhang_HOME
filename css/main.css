@@ -1,0 +1,138 @@
+#title {
+  background-image: url("../img/1.jpg");
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+}
+#title .row p{
+  font-style: italic;
+}
+#title .container{
+  margin-left: 100px;
+}
+#title .row {
+  margin-top: 500px;
+}
+#content #musicCard{
+  margin: 15px 0;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  transition: box-shadow 0.4s ease;
+}
+#content #musicCard:hover{
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+}
+#content #musicCard h3{
+  font-size: 20px;
+}
+#content #musicCard p{
+  font-size: 14px;
+}
+#content #musicCard h3+p{
+  font-style: italic;
+}
+#content.container{
+  margin-left: 75px;
+  margin-right: 75px;
+  width: auto;
+}
+.musicIcon{
+  width: 40px;
+  float: left;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+#content .articleCard{
+  margin: 15px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  transition: box-shadow 0.4s ease;
+}
+#content .articleCard:hover{
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+}
+#content .articleCard h3{
+  font-size: 16px;
+  margin-top: 10px;
+}
+#content .articleCard img+div+h3{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 50px;
+}
+#content .articleCard:first-child img+div+h3{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+}
+#articleContainer{
+  padding: 0;
+}
+#rightBar{
+  padding: 0;
+}
+#rightBar .row{
+  margin-right: 0;
+  margin-left: 0;
+}
+#rightBar #dailyCard{
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 5px 15px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.4s ease;
+}
+#rightBar #dailyCard:hover{
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+}
+.articleCard:first-child img{
+  margin-right: 0;
+  float:none;
+  width: 100%;
+  border-radius: 30px;
+  padding: 15px 5px;
+}
+.articleCard img{
+  float:left;
+  margin-right: 5px;
+  width: 25%;
+  border-radius: 5px;
+  padding-top: 10px;
+}
+.articleCard a{
+  color: black;
+  text-decoration: none;
+}
+.articleCard img + div > h1{
+  margin-top: 40px;
+}
+.articleCard img + div > p{
+  margin-bottom: 40px;
+}
+.articleCard:first-child img + div > p{
+  margin-bottom: auto;
+}
+.articleCard:first-child img + div > h1{
+  margin-top: auto;
+}
+li.kind{
+  margin-top: 10px;
+  padding: 10px 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  transition: box-shadow 0.4s ease;
+}
+li.kind:hover{
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+}
+#kinds ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+.kind a{
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
