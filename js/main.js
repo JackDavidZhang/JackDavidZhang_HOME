@@ -57,7 +57,7 @@ const vm_articleContainer = new Vue({
                 picture: "./img/1.jpg",
                 time: "2022.4.17 13:20",
                 url: "#",
-                id:1
+                id: 1
             },
             {title: "随感其三", introduction: "test", hasPicture: false, picture: "", time: "2022.4.13 13:20", id: 0},
             {title: "随感其四", introduction: "test", hasPicture: false, picture: "", time: "2022.5.16 13:20", id: 0},
@@ -107,7 +107,7 @@ function changeDate(v) {
     v.date.x = i[d.getDay()];
 }
 
-window.onload=function(){
+window.onload = function () {
     $("#list div>h4").click(function () {
         $(this).parent().find("div:visible").slideUp(200);
         $(this).parent().find("div:hidden").slideDown(200);

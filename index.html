@@ -3,7 +3,7 @@
 <!--Nuclear Atom Studio-->
 <!--Developed by JackDavidZhang-->
 <!--DEV_1.0-->
-<!--2022.9.23-->
+<!--2022.9.24-->
 
 <html lang="zh">
 <head>
@@ -14,25 +14,24 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/vue.js"></script>
     <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/index.css" rel="stylesheet"/>
 </head>
 
 <body>
 <div id="title">
-    <div class="container">
-        <div class="row">
-            <h1>JackDavidZhang</h1>
-            <p>{{sign}}</p>
-        </div>
+    <div>
+        <h1>JackDavidZhang</h1>
+        <p>{{sign}}</p>
     </div>
 </div>
 <div class="container" id="content">
     <div class="row">
         <div class="col-md-2">
-            <div id="musicCard">
+            <div class="card" id="musicCard">
                 <h3>{{song}}</h3>
                 <p>{{album}}</p>
                 <p>{{artist}}</p>
-                <div class="row">
+                <div>
                     <div class="musicIcon">
                         <a target="_blank" v-bind:href="wUrl">
                             <img alt="NeteaseCloudMusicIcon" src="img/wyy.png" width="40px"/>
@@ -45,15 +44,15 @@
                     </div>
                 </div>
             </div>
-            <div id="list">
-                <div v-for="(list) in lists"><h4>{{list.name}}</h4>
-                    <div v-for="(listContent) in list.content" class="listElem">
-                        <a v-bind:href="listContent.id|articleUrl" target="_blank">{{listContent.title}}</a></div>
+            <div class="card" id="list">
+                <div v-for="(list) in lists"><h4 class="card">{{list.name}}</h4>
+                    <div class="listElem card" v-for="(listContent) in list.content">
+                        <a target="_blank" v-bind:href="listContent.id|articleUrl">{{listContent.title}}</a></div>
                 </div>
             </div>
         </div>
         <div class="col-md-8" id="articleContainer">
-            <div class="row articleCard" v-for="(article) in articles">
+            <div class="card articleCard" v-for="(article) in articles">
                 <img v-bind:src="article.picture" v-if="article.hasPicture"/>
                 <div>
                     <h1><a target="_blank" v-bind:href="article.id|articleUrl">{{article.title}}</a></h1>
@@ -63,13 +62,13 @@
             </div>
         </div>
         <div class="col-md-2" id="rightBar">
-            <div class="row" id="dailyCard">
+            <div class="card" id="dailyCard">
                 <h4>{{date.y}}年{{date.m}}月{{date.d}}日 {{date.x}}</h4>
                 <h3>{{date.h|number}}:{{date.min|number}}</h3>
             </div>
-            <div class="row" id="kinds">
+            <div id="kinds">
                 <ul>
-                    <li class="kind" v-for="(kind) in kinds">
+                    <li class="kind card" v-for="(kind) in kinds">
                         <a target="_blank" v-bind:href="kind.id|kindUrl">
                             {{kind.name}}
                             <span class="badge pull-right">{{kind.num}}</span>

@@ -1,0 +1,167 @@
+#title {
+    background-image: url("../img/1.jpg");
+    background-size: cover;
+    height: 600px;
+}
+
+#title > div {
+    padding-top: 500px;
+    padding-left: 100px;
+}
+
+#title > div > p {
+    font-style: italic;
+}
+
+.card {
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.4s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+#content {
+    margin-left: 75px;
+    margin-right: 75px;
+    width: auto;
+}
+
+#musicCard > h3, #musicCard > p {
+    padding-left: 10px;
+}
+
+#musicCard > h3 {
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+#musicCard > p {
+    font-size: 14px;
+}
+
+#musicCard > h3 + p {
+    font-style: italic;
+}
+
+#musicCard .musicIcon {
+    width: 40px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+div#list {
+    padding: 5px 15px;
+}
+
+#list div:last-child {
+    margin-bottom: 10px;
+}
+
+div.listElem {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 5px 15px;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: none;
+}
+
+div.listElem:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+div.listElem:last-child {
+    margin-bottom: 20px;
+}
+
+#list div > h4 {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 8px 15px;
+    margin-bottom: 5px;
+}
+
+#list div > h4:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#list a {
+    text-decoration: none;
+    color: black;
+}
+
+#articleContainer {
+    padding: 0;
+}
+
+.articleCard {
+    margin: 15px;
+    padding: 5px 15px;
+}
+
+.articleCard > h3 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.articleCard > img + div > h1 {
+    margin-top: 15px;
+}
+
+.articleCard a {
+    color: black;
+    text-decoration: none;
+}
+
+.articleCard img {
+    float: left;
+    margin-right: 5px;
+    width: 25%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.articleCard:first-child img {
+    float: none;
+    width: 100%;
+    border-radius: 30px;
+    padding: 5px 5px 15px;
+}
+
+.articleCard:first-child > img + div > h1 {
+    margin-top: auto;
+}
+
+#rightBar {
+    padding: 0;
+}
+
+#rightBar > #dailyCard {
+    padding: 5px 15px;
+}
+
+#rightBar > #kinds {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#kinds li.kind {
+    padding: 8px 15px;
+}
+
+#kinds ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#kinds .kind a {
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
