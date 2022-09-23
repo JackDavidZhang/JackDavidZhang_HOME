@@ -3,7 +3,7 @@
 <!--Nuclear Atom Studio-->
 <!--Developed by JackDavidZhang-->
 <!--DEV_1.0-->
-<!--2022.5.13-->
+<!--2022.9.23-->
 
 <html lang="zh">
 <head>
@@ -47,12 +47,11 @@
             </div>
             <div id="list">
                 <div v-for="(list) in lists"><h4>{{list.name}}</h4>
-                    <div v-for="(listContent) in list.content"><h6><a
-                            v-bind:href="listContent.id|articleUrl">{{listContent.title}}</a></h6></div>
+                    <div v-for="(listContent) in list.content" class="listElem">
+                        <a v-bind:href="listContent.id|articleUrl" target="_blank">{{listContent.title}}</a></div>
                 </div>
             </div>
         </div>
-
         <div class="col-md-8" id="articleContainer">
             <div class="row articleCard" v-for="(article) in articles">
                 <img v-bind:src="article.picture" v-if="article.hasPicture"/>
@@ -81,6 +80,11 @@
         </div>
     </div>
 </div>
+<footer>
+    <p>Copyright &copy NuclearAtomStudio JackDavidZhang</p>
+    <p>2022 @ NuclearAtomSoftwareStudio</p>
+    <p><a href="about.html">关于</a>|<a href="https://github.com/JackDavidZhang/JackDavidZhang_HOME/">GitHub</a></p>
+</footer>
 <script src="js/main.js"></script>
 </body>
 </html>

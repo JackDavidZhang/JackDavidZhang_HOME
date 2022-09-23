@@ -78,15 +78,23 @@
     margin-top: 10px;
 }
 
-#content .articleCard img + div + h3 {
-    margin-left: 10px;
-    margin-right: 10px;
+#content .articleCard img + div{
+    float:left;
+    width: 70%;
 }
 
-#content .articleCard:first-child img + div + h3 {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
+#content .articleCard img + div + h3 {
+    float:left;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 0px;
+}
+
+#content .articleCard div + h3 {
+    padding-left: 10px;
+}
+#content .articleCard:first-child img + div{
+    width: 100%;
 }
 
 #articleContainer {
@@ -169,5 +177,69 @@ li.kind:hover {
 .kind a {
     font-size: 14px;
     color: black;
+    text-decoration: none;
+}
+
+div#list
+{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: box-shadow 0.4s ease;
+    padding: 5px 15px;
+}
+
+div#list:hover
+{
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+#list div:last-child
+{
+    margin-bottom: 10px;
+}
+
+div.listElem
+{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.4s ease;
+    padding: 5px 15px;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: none;
+}
+
+div.listElem:hover
+{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+div.listElem:last-child
+{
+    margin-bottom: 20px;
+}
+
+#list div>h4{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.4s ease;
+    padding: 8px 15px;
+    margin-bottom: 5px;
+}
+#list div>h4:hover
+{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#list a{
+    text-decoration: none;
+    color: black;
+}
+
+footer>p{
+    text-align: center;
+}
+footer>p>a{
     text-decoration: none;
 }

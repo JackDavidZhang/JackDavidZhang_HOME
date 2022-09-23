@@ -35,7 +35,7 @@ const vm_musicCard = new Vue({
         artist: "麻枝准",
         album: "CLANNAD ORIGINAL SOUNDTRACK",
         wUrl: "https://music.163.com/song?id=22707014",
-        qUrl: "https://i.y.qq.com/v8/playsong.html?songid=241078027",
+        qUrl: "https://y.qq.com/n/ryqq/songDetail/000inPRx46ydkD",
     }
 });
 const vm_articleContainer = new Vue({
@@ -44,7 +44,7 @@ const vm_articleContainer = new Vue({
         articles: [
             {
                 title: "随感其一",
-                introduction: "test",
+                introduction: "金樽清酒斗十千，玉盘珍羞直万钱。停杯投箸不能食，拔剑四顾心茫然。欲渡黄河冰塞川，将登太行雪满山。行路难，行路难，多歧路，今安在。长风破浪会有时，直挂云帆济沧海。",
                 hasPicture: true,
                 picture: "./img/1.jpg",
                 time: "2022.4.17 13:20",
@@ -56,7 +56,8 @@ const vm_articleContainer = new Vue({
                 hasPicture: true,
                 picture: "./img/1.jpg",
                 time: "2022.4.17 13:20",
-                url: "#"
+                url: "#",
+                id:1
             },
             {title: "随感其三", introduction: "test", hasPicture: false, picture: "", time: "2022.4.13 13:20", id: 0},
             {title: "随感其四", introduction: "test", hasPicture: false, picture: "", time: "2022.5.16 13:20", id: 0},
@@ -104,4 +105,12 @@ function changeDate(v) {
     v.date.h = d.getHours();
     v.date.min = d.getMinutes();
     v.date.x = i[d.getDay()];
+}
+
+window.onload=function(){
+    $("#list div>h4").click(function () {
+        $(this).parent().find("div:visible").slideUp(200);
+        $(this).parent().find("div:hidden").slideDown(200);
+        $(this).parent().siblings().find("div").slideUp(200);
+    });
 }
