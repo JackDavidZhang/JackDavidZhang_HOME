@@ -2,16 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title class="vm_el">{{title}} - JackDavidZhang</title>
+    <title id="title">{{title}} - JackDavidZhang</title>
     <script src="js/jquery-3.6.0.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <script src="js/bootstrap.js"></script>
     <script src="js/vue.js"></script>
     <link href="css/main.css" rel="stylesheet"/>
-    <script src="js/article.js"></script>
     <link href="css/article.css" rel="stylesheet"/>
+    <script crossorigin="anonymous" integrity="sha384-jqrAC88GWDVskFFYTrKSijc+nq9u3kmA1cn4W0iYANXdH1BFtWKyb/YR8RijuWzn"
+            src="https://lib.baomitu.com/skrollr/0.6.30/skrollr.min.js"></script>
 </head>
 <body>
+<div id="backimg"></div>
+<div class="container" data-0="backdrop-filter: blur(0px)" data-1000="backdrop-filter: blur(15px)" id="mainContainer">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" id="article">
+            <div id="article_title">
+                <h1>{{title}}</h1>
+                <span>{{kind}}</span>
+                <span>{{date}}</span>
+            </div>
+            <div data-0="filter: drop-shadow(0 0 15px black) opacity(0.95);background-color: rgb(255,255,255);"
+                 data-1000="filter: drop-shadow(0 0 15px black) opacity(0.80);background-color: rgb(211,211,211);"
+                 id="content">
+                <div v-html="content"></div>
+            </div>
 
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <footer>
+        <p>Copyright &copy NuclearAtomStudio JackDavidZhang</p>
+        <p>2022 @ NuclearAtomSoftwareStudio</p>
+        <p><a href="about.html">关于</a>|<a href="https://github.com/JackDavidZhang/JackDavidZhang_HOME/">GitHub</a></p>
+    </footer>
+</div>
+<script src="js/article.js"></script>
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+            fontCache: 'global'
+        },
+        options: {
+            enableMenu: false
+        }
+    };
+</script>
+<script src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-chtml.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 <!--Nuclear Atom Studio-->
 <!--Developed by JackDavidZhang-->
-<!--DEV_1.0-->
+<!--v 0.3_DEV-->
 <!--2022.9.24-->
 
 <html lang="zh">
@@ -55,7 +55,7 @@
             <div class="card articleCard" v-for="(article) in articles">
                 <img v-bind:src="article.picture" v-if="article.hasPicture"/>
                 <div>
-                    <h1><a target="_blank" v-bind:href="article.id|articleUrl">{{article.title}}</a></h1>
+                    <h1><a v-bind:href="article.id|articleUrl">{{article.title}}</a></h1>
                     <p>{{article.time}}</p>
                 </div>
                 <h3>{{article.introduction}}</h3>
