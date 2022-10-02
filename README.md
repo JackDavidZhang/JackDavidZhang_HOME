@@ -1,20 +1,30 @@
-# JackDavidZhang_HOME
+*JackDavidZhang_HOME v1.0_DEV*
 
-Frontside sources of website: JackDavidZhang HOME
+这里是JackDavid Zhang的个人博客
 
-*JackDavidZhang_HOME v 0.3_DEV*
+开发初期，功能尚未完善，如发现bug请到GitHub Issues反馈
 
-这是JackDavid Zhang的个人博客
+### 开发计划
 
-开发初期，功能尚未完善，如有bug请到GitHub Issues反馈
+后端(基于Jersey的JAX-WS服务)
 
-在后续开发中，我们计划对其加入后台管理，作为一个博客模板发布，敬请期待
+后端图形化管理页面
+
+所有文章（分类）页面
+
+文章指定样式
+
+文章指定背景
+
+整体文字排版优化
+
+~~随机首页背景、签名~~
+
+~~随机歌曲推荐~~
 
 ### 开发名单
 
-Nuclear Atom Software Studio
-
-JackDavid Zhang
+JackDavid Zhang @ Nuclear Atom Studio
 
 ### 引用库
 
