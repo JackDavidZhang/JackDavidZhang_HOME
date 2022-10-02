@@ -1,0 +1,134 @@
+{
+  "sign": [
+    "已知花意，未闻花名，再遇花时，泪已千行...",
+    "以声之色，塑花之形，将你之名，刻于我心...",
+    "但愿长醉不愿醒..."
+  ],
+  "songs": [
+    {
+      "song": "渚~坂の下の別れ",
+      "artist": "麻枝准",
+      "album": "CLANNAD ORIGINAL SOUNDTRACK",
+      "wUrl": "https://music.163.com/song?id=22707014",
+      "qUrl": "https://y.qq.com/n/ryqq/songDetail/000inPRx46ydkD"
+    },
+    {
+      "song": "渚 ~君と目指した高み、愿いが叶う场所~",
+      "artist": "雪桜草",
+      "album": "Chranos ~クラノス~",
+      "wUrl": "https://music.163.com/song?id=869526",
+      "qUrl": "https://y.qq.com/n/ryqq/songDetail/0023eX1W29f01V"
+    }
+  ],
+  "articles": [
+    {
+      "title": "随感其一",
+      "introduction": "金樽清酒斗十千，玉盘珍羞直万钱。停杯投箸不能食，拔剑四顾心茫然。欲渡黄河冰塞川，将登太行雪满山。行路难，行路难，多歧路，今安在。长风破浪会有时，直挂云帆济沧海。",
+      "hasPicture": true,
+      "picture": "./img/artimg/1.jpg",
+      "time": "2022.4.17",
+      "id": 0
+    },
+    {
+      "title": "STL中的集合",
+      "introduction": "STL中的集合分为Set(有序集)和Map(无序集)，他们均为STL中的容器类，可以使用迭代器。不支持数组表示，Set支持查找前驱和后驱，Map不支持。",
+      "hasPicture": true,
+      "picture": "./img/artimg/1.jpg",
+      "time": "2022.4.17",
+      "id": 1
+    },
+    {
+      "title": "随感其三",
+      "introduction": "test",
+      "hasPicture": false,
+      "picture": "",
+      "time": "2022.4.13 13:20",
+      "id": 0
+    },
+    {
+      "title": "随感其四",
+      "introduction": "test",
+      "hasPicture": false,
+      "picture": "",
+      "time": "2022.5.16 13:20",
+      "id": 0
+    },
+    {
+      "title": "随感其五",
+      "introduction": "test",
+      "hasPicture": false,
+      "picture": "",
+      "time": "2022.7.17 13:20",
+      "id": 0
+    }
+  ],
+  "kinds": [
+    {
+      "name": "随感",
+      "id": 0,
+      "num": 1
+    },
+    {
+      "name": "技术",
+      "id": 0,
+      "num": 2
+    },
+    {
+      "name": "发布",
+      "id": 0,
+      "num": 3
+    },
+    {
+      "name": "文艺",
+      "id": 0,
+      "num": 999
+    }
+  ],
+  "lists": [
+    {
+      "name": "list1",
+      "content": [
+        {
+          "title": "t1",
+          "id": 0
+        },
+        {
+          "title": "t1",
+          "id": 0
+        },
+        {
+          "title": "t1",
+          "id": 0
+        }
+      ]
+    },
+    {
+      "name": "list1",
+      "content": [
+        {
+          "title": "t1",
+          "id": 0
+        },
+        {
+          "title": "t1",
+          "id": 0
+        },
+        {
+          "title": "t1",
+          "id": 0
+        }
+      ]
+    }
+  ],
+  "backimg": [
+    {
+      "img":"./img/backimg/1.jpg",
+      "color": "#000000"
+    },{
+      "img":"./img/backimg/2.jpg",
+      "color": "#F3F3F3"
+    },{
+      "img":"./img/backimg/3.jpg",
+      "color": "#F3F3F3"
+    }]
+}
