@@ -15,7 +15,7 @@ $.ajax({
     url: "./api/article/" + id + ".json", dataType: 'json', success: function (result) {
         re = $.parseJSON(JSON.stringify(result));
     }, error: function (result) {
-        //location.replace("./error.html?errorCode=" + result.status);
+        location.replace("./error.html?errorCode=" + result.status);
     },
     async: false
 });

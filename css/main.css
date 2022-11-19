@@ -22,13 +22,13 @@ code span {
     'WenQuanYi Micro Hei', SimSun, sans-serif;
 }
 
-pre, code {
+pre{
     background-color: #000000 !important;
     color: white;
 }
 
 p, ul, li, ol, a, del {
-    font-weight: lighter;
+    font-weight: normal;
     font-size: 16px;
     line-height: 26px;
 }
