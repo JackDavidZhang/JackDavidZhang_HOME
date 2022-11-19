@@ -103,6 +103,6 @@ function changeDate(v) {
 }
 
 function rnd(seed) {
-    seed = (seed * 9301 + 49297) % 233280;
+    seed = (seed * 9301 + 49297) % 233283;
     return seed;
 }
