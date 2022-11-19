@@ -122,13 +122,16 @@
   ],
   "backimg": [
     {
-      "img":"./img/backimg/1.jpg",
+      "img": "./img/backimg/1.jpg",
       "color": "#000000"
-    },{
-      "img":"./img/backimg/2.jpg",
+    },
+    {
+      "img": "./img/backimg/2.jpg",
       "color": "#F3F3F3"
-    },{
-      "img":"./img/backimg/3.jpg",
+    },
+    {
+      "img": "./img/backimg/3.jpg",
       "color": "#F3F3F3"
-    }]
+    }
+  ]
 }

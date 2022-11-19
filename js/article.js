@@ -9,7 +9,7 @@ if (/AppleWebKit.*Mobile/i.test(navigator.userAgent)
 } else {
     $("head").append("<script crossorigin=\"anonymous\" integrity=\"sha384-jqrAC88GWDVskFFYTrKSijc+nq9u3kmA1cn4W0iYANXdH1BFtWKyb/YR8RijuWzn\" src=\"https://lib.baomitu.com/skrollr/0.6.30/skrollr.min.js\"></script>");
 }
-var re = {data: {title: "",stylesheet: ""}};
+var re = {data: {title: "", stylesheet: ""}};
 let id = GetQueryString("id");
 $.ajax({
     url: "./api/article/" + id + ".json", dataType: 'json', success: function (result) {
@@ -20,7 +20,7 @@ $.ajax({
     async: false
 });
 console.log(re.data.stylesheet);
-$("head").append("<link href=\""+re.data.stylesheet+"\" rel=\"stylesheet\"/>");
+$("head").append("<link href=\"" + re.data.stylesheet + "\" rel=\"stylesheet\"/>");
 window.onload = function () {
     let vm_title = new Vue(
         {

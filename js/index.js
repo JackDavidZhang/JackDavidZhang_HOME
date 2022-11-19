@@ -4,7 +4,7 @@ let re = {
     articles: [],
     kinds: [],
     lists: [],
-    backimg:[{img:"",color:""}]
+    backimg: [{img: "", color: ""}]
 };
 $.ajax({
     url: "./api/homepage.json", dataType: 'json', success: function (result) {
@@ -15,8 +15,8 @@ $.ajax({
     async: false
 });
 window.onload = function () {
-    var img_num = rnd(new Date().getTime())%re.backimg.length;
-    $("#title").css("background-image","url("+re.backimg[img_num].img+")").css("color",re.backimg[img_num].color);
+    var img_num = rnd(new Date().getTime()) % re.backimg.length;
+    $("#title").css("background-image", "url(" + re.backimg[img_num].img + ")").css("color", re.backimg[img_num].color);
     Vue.filter("number", function (value) {
         return value < 10 ? "0" + value : value;
     });
@@ -53,10 +53,10 @@ window.onload = function () {
         el: "#musicCard",
         data() {
             d = new Date();
-            seed = d.getFullYear()*10000+d.getMonth()*100+d.getDay();
+            seed = d.getFullYear() * 10000 + d.getMonth() * 100 + d.getDay();
             let rand = rnd(seed);
             rand %= re.songs.length;
-            return re.songs[rand+1];
+            return re.songs[rand + 1];
         }
     });
     const vm_articleContainer = new Vue({
