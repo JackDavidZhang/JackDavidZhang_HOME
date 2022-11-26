@@ -15,11 +15,10 @@ $.ajax({
     url: "./api/article/" + id + ".json", dataType: 'json', success: function (result) {
         re = $.parseJSON(JSON.stringify(result));
     }, error: function (result) {
-        location.replace("./error.html?errorCode=" + result.status);
+        //location.replace("./error.html?errorCode=" + result.status);
     },
     async: false
 });
-console.log(re.data.stylesheet);
 $("head").append("<link href=\"" + re.data.stylesheet + "\" rel=\"stylesheet\"/>");
 window.onload = function () {
     let vm_title = new Vue(

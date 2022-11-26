@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="card" id="list">
-                <div v-for="(list) in lists"><h4 class="card">{{list.name}}</h4>
+                <div v-for="(list) in lists"><h4 class="card"><a>{{list.name}}</a></h4>
                     <div class="listElem card" v-for="(listContent) in list.content">
                         <a target="_blank" v-bind:href="listContent.id|articleUrl">{{listContent.title}}</a></div>
                 </div>
@@ -71,10 +71,8 @@
             <div id="kinds">
                 <ul>
                     <li class="kind card" v-for="(kind) in kinds">
-                        <a target="_blank" v-bind:href="kind.id|kindUrl">
-                            {{kind.name}}
-                            <span class="badge pull-right">{{kind.num}}</span>
-                        </a>
+                        {{kind.name}}
+                        <span class="badge pull-right">{{kind.num}}</span>
                     </li>
                 </ul>
             </div>

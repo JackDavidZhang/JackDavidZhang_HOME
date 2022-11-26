@@ -11,7 +11,20 @@ footer > p > a {
     'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',
     'Microsoft JhengHei', 'Source Han Sans SC', 'Noto Sans CJK SC',
     'Source Han Sans CN', 'Source Han Sans TC', 'Noto Sans CJK TC',
-    'WenQuanYi Micro Hei', SimSun, sans-serif;;
+    'WenQuanYi Micro Hei', SimSun, sans-serif;
+}
+
+code span {
+    font-family: Consolas, 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
+    'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',
+    'Microsoft JhengHei', 'Source Han Sans SC', 'Noto Sans CJK SC',
+    'Source Han Sans CN', 'Source Han Sans TC', 'Noto Sans CJK TC',
+    'WenQuanYi Micro Hei', SimSun, sans-serif;
+}
+
+pre, code {
+    background-color: #000000 !important;
+    color: white;
 }
 
 p, ul, li, ol, a, del {
