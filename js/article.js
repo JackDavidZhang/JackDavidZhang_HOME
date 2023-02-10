@@ -35,6 +35,10 @@ window.onload = function () {
             return re.data;
         }
     });
+    const script = document.createElement('script');
+    script.src = 'https://lib.baomitu.com/mathjax/3.2.2/es5/tex-chtml.js';
+    script.async = true;
+    document.head.appendChild(script);
     $("mjx-container").css("display", "inline");
     if (isMoblie) {
         $("#content").attr("style", "filter: drop-shadow(0 0 15px black) opacity(0.80);background-color: rgb(211,211,211);");
