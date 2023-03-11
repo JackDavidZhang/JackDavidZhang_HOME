@@ -6,7 +6,7 @@ footer > p > a {
     text-decoration: none;
 }
 
-* {
+p, h1, h2, h3, li, h4, h5, h6 {
     font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
     'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',
     'Microsoft JhengHei', 'Source Han Sans SC', 'Noto Sans CJK SC',
@@ -22,7 +22,7 @@ code span {
     'WenQuanYi Micro Hei', SimSun, sans-serif;
 }
 
-pre{
+pre {
     background-color: #000000 !important;
     color: white;
 }

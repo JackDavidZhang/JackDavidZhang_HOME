@@ -87,7 +87,7 @@ div.listElem {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 5px 15px;
-    margin: 0px 5px 5px 10px;
+    margin: 0 5px 5px 10px;
     display: none;
 }
 
@@ -197,6 +197,11 @@ div.listElem:last-child {
 
 #kinds li.kind {
     padding: 8px 15px;
+    transition: font-weight 5s ease;
+}
+
+#kinds li.kind:hover{
+    font-weight: 100;
 }
 
 #kinds ul {
