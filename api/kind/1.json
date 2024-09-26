@@ -1,0 +1,30 @@
+{
+  "name": "发布",
+  "sum": 10,
+  "articles": [
+    {
+      "title": "t1",
+      "introduction": "test",
+      "hasPicture": "ture",
+      "picture": "./img/artimg/1.jpg",
+      "time": "2022.5.16 13:20",
+      "id": 0
+    },
+    {
+      "title": "t2",
+      "introduction": "test",
+      "hasPicture": false,
+      "picture": "",
+      "time": "2022.5.16 13:20",
+      "id": 0
+    },
+    {
+      "title": "t3",
+      "introduction": "test",
+      "hasPicture": false,
+      "picture": "",
+      "time": "2022.5.16 13:20",
+      "id": 0
+    }
+  ]
+}

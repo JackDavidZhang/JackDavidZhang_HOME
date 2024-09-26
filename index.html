@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 
-<!--Nuclear Atom Studio-->
-<!--Developed by JackDavidZhang-->
-<!--v 1.1.1.230211_RELEASE-->
-<!--2023.2.11-->
+<!--Developed by ZTsubaki-->
+<!--v 1.2.0-->
+<!--2024.9.26-->
 
 <html lang="zh">
 <head>
     <meta charset="utf-8"/>
-    <title>JackDavidZhang HOME</title>
+    <title>ZTsubaki HOME</title>
     <script src="https://cdn.staticfile.org/jquery/3.6.1/jquery.min.js"></script>
-    <link crossorigin="anonymous" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" href="https://lib.baomitu.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <script crossorigin="anonymous" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" src="https://lib.baomitu.com/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script crossorigin="anonymous" integrity="sha512-PhuYrdDBtBeUjY7KTmjRYFFadw8uXXdTmzZyhCHZewYsqZJ0pxFCwU528jRoil42LXMW3ksegQT5zdjkfiR1IA==" src="https://lib.baomitu.com/vue/2.7.7/vue.min.js"></script>
+    <link crossorigin="anonymous" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+          href="https://lib.baomitu.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script crossorigin="anonymous" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            src="https://lib.baomitu.com/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-PhuYrdDBtBeUjY7KTmjRYFFadw8uXXdTmzZyhCHZewYsqZJ0pxFCwU528jRoil42LXMW3ksegQT5zdjkfiR1IA=="
+            src="https://lib.baomitu.com/vue/2.7.7/vue.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900" rel="stylesheet">
+    <script src="js/main.js"></script>
     <link href="css/main.css" rel="stylesheet"/>
     <link href="css/index.css" rel="stylesheet"/>
 </head>
@@ -21,7 +25,7 @@
 <body>
 <div id="title">
     <div>
-        <h1>JackDavidZhang</h1>
+        <h1>ZTsubaki</h1>
         <p>{{sign}}</p>
     </div>
     <div style="height: 10px;padding: 0;margin: 0;backdrop-filter: blur(2px);"></div>
@@ -71,7 +75,7 @@
             <div id="kinds">
                 <ul>
                     <li class="kind card" v-for="(kind) in kinds">
-                        {{kind.name}}
+                        <a v-bind:href="kind.id|kindUrl">{{kind.name}}</a>
                         <span class="badge pull-right">{{kind.num}}</span>
                     </li>
                 </ul>
@@ -80,8 +84,8 @@
     </div>
 </div>
 <footer>
-    <p>Copyright &copy NuclearAtomStudio JackDavidZhang</p>
-    <p>2022 @ NuclearAtomSoftwareStudio</p>
+    <p>Copyright &copy ZTsubaki</p>
+    <p>2024 @ ZTsuabki</p>
     <p><a href="./article.html?id=0">关于</a>|<a href="https://github.com/JackDavidZhang/JackDavidZhang_HOME/">GitHub</a>
     </p>
 </footer>

@@ -20,12 +20,6 @@ window.onload = function () {
     Vue.filter("number", function (value) {
         return value < 10 ? "0" + value : value;
     });
-    Vue.filter("articleUrl", function (value) {
-        return "./article.html?id=" + value;
-    });
-    Vue.filter("kindUrl", function (value) {
-        return "./kind.html?id=" + value;
-    });
     const vm_content = new Vue({
         el: "#dailyCard",
         data: {

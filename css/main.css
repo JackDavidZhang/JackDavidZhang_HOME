@@ -32,3 +32,64 @@ p, ul, li, ol, a, del {
     font-size: 16px;
     line-height: 26px;
 }
+
+.card {
+    background-color: white;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.4s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+#articleContainer {
+    padding: 0;
+}
+
+.articleCard {
+    margin: 15px;
+    padding: 5px 15px;
+}
+
+.articleCard > h3 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.articleCard > img + div > h1 {
+    margin-top: 15px;
+}
+
+.articleCard > div > h1 > a {
+    font-size: 32px;
+}
+
+.articleCard > div > h1 + p {
+    font-weight: 300;
+}
+
+.articleCard > div + h3 {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.articleCard a {
+    color: black;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.articleCard img {
+    margin-right: 5px;
+    margin-bottom: 10px;
+    width: 25%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.articleCard > img + div {
+    display: inline-grid;
+}
