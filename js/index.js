@@ -10,32 +10,30 @@ $.ajax({
     url: "./api/homepage.json", dataType: 'json', success: function (result) {
         re = $.parseJSON(JSON.stringify(result));
     }, error: function (result) {
-        location.replace("./error.html?errorCode=" + result.status);
+        //location.replace("./error.html?errorCode=" + result.status);
     },
     async: false
 });
 window.onload = function () {
     var img_num = rnd(new Date().getTime()) % re.backimg.length;
     $("#title").css("background-image", "url(" + re.backimg[img_num].img + ")").css("color", re.backimg[img_num].color);
-    Vue.filter("number", function (value) {
-        return value < 10 ? "0" + value : value;
-    });
-    const vm_content = new Vue({
+    const vm_content = Vue.createApp({
         el: "#dailyCard",
-        data: {
+        data() {return {
             date: {y: "1970", m: "1", d: "1", h: "0", min: "0", s: "0", x: "yi"},
-        },
+        }},
         mounted: function () {
             changeDate(this);
             this.timer = setInterval(changeDate, 1000, this);
         },
-        beforeDestroy: function () {
+        onBeforeUnmount: function () {
             if (this.timer) {
                 clearInterval(this.timer);
             }
         },
     });
-    const vm_title = new Vue({
+    vm_content.mount("#dailyCard");
+    const vm_title = Vue.createApp({
         el: "#title",
         data() {
             let rand = rnd(new Date().getTime());
@@ -43,7 +41,8 @@ window.onload = function () {
             return {sign: re.sign[rand]};
         },
     });
-    const vm_musicCard = new Vue({
+    vm_title.mount("#title");
+    const vm_musicCard = Vue.createApp({
         el: "#musicCard",
         data() {
             d = new Date();
@@ -53,24 +52,43 @@ window.onload = function () {
             return re.songs[rand + 1];
         }
     });
-    const vm_articleContainer = new Vue({
+    vm_musicCard.mount("#musicCard");
+    const vm_articleContainer = Vue.createApp({
         el: "#articleContainer",
         data() {
+            for(artice in re.articles)
+            {
+                re.articles[artice].url = "./article.html?id="+re.articles[artice].id.toString();
+            }
             return {articles: re.articles};
         }
     });
-    const vm_kinds = new Vue({
+    vm_articleContainer.mount("#articleContainer");
+    const vm_kinds = Vue.createApp({
         el: "#kinds",
         data() {
+            for(kind in re.kinds)
+            {
+                re.kinds[kind].url = "./kind.html?id="+re.kinds[kind].id.toString();
+            }
             return {kinds: re.kinds};
         }
     });
-    const vm_list = new Vue({
+    vm_kinds.mount("#kinds");
+    const vm_list = Vue.createApp({
         el: "#list",
         data() {
+            for(list in re.lists)
+            {
+                for(listContent in re.lists[list].content)
+                {
+                    re.lists[list].content[listContent].url = "./article.html?id="+re.lists[list].content[listContent].id.toString();
+                }
+            }
             return {lists: re.lists};
         }
     });
+    vm_list.mount("#list");
     $("#list div>h4").click(function () {
         $(this).parent().find("div:visible").slideUp(200);
         $(this).parent().find("div:hidden").slideDown(200);
@@ -94,6 +112,8 @@ function changeDate(v) {
     v.date.h = d.getHours();
     v.date.min = d.getMinutes();
     v.date.x = i[d.getDay()];
+    if(v.date.h<10)v.date.h='0'+v.date.h.toString();
+    if(v.date.min<10)v.date.min='0'+v.date.min.toString();
 }
 
 function rnd(seed) {
