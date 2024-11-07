@@ -1,6 +1,6 @@
-# *JackDavidZhang_HOME v1.1_DEV*
+# *ZTsubaki_HOME v2.0_DEV*
 
-这里是JackDavid Zhang的个人博客
+这里是ZTsubaki(JackDavid Zhang)的个人博客
 
 开发初期，功能尚未完善，如发现bug请到GitHub Issues反馈
 
@@ -9,8 +9,6 @@
 后端(基于Jersey的JAX-WS服务)
 
 后端图形化管理页面
-
-所有文章（分类）页面
 
 自定义文章背景
 
@@ -41,8 +39,6 @@ If there is any bugs,please make a feedback at Github Issues.
 Behind-side(based on Jersey JAX-WS Service)
 
 Behind-side graph user interface manager page
-
-All articles(kinds) page
 
 Custom article background
 
