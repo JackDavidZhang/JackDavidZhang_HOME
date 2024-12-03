@@ -75,6 +75,13 @@ window.onload = function () {
         }
     });
     vm_kinds.mount("#kinds");
+    const vm_navbar_kinds = Vue.createApp({
+        el: "#navbar_kinds",
+        data() {
+            return {kinds: re.kinds};
+        }
+    });
+    vm_navbar_kinds.mount("#navbar_kinds");
     const vm_list = Vue.createApp({
         el: "#list",
         data() {
@@ -94,6 +101,7 @@ window.onload = function () {
         $(this).parent().find("div:hidden").slideDown(200);
         $(this).parent().siblings().find("div").slideUp(200);
     });
+    nav_scroll($("#title").height());
 }
 
 function changeDate(v) {

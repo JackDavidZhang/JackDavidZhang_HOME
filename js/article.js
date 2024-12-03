@@ -14,6 +14,10 @@ let id = GetQueryString("id");
 $.ajax({
     url: "./api/article/" + id + ".json", dataType: 'json', success: function (result) {
         re = $.parseJSON(JSON.stringify(result));
+        if(re.data.styleSheet !== undefined) {
+            $("head").append("<link herf=\'"+re.data.styleSheet+"\' rel='stylesheet'>");
+        }
+        re.data.kurl = "./kind.html?id="+re.data.kid;
     }, error: function (result) {
         //location.replace("./error.html?errorCode=" + result.status);
     },
@@ -21,7 +25,7 @@ $.ajax({
 });
 $("head").append("<link href=\"" + re.data.stylesheet + "\" rel=\"stylesheet\"/>");
 window.onload = function () {
-    let vm_title = new Vue(
+    let vm_title = Vue.createApp(
         {
             el: "#title",
             data() {
@@ -29,12 +33,14 @@ window.onload = function () {
             }
         }
     );
-    let vm_article = new Vue({
+    vm_title.mount("#title");
+    let vm_article = Vue.createApp({
         el: "#article",
         data() {
             return re.data;
         }
     });
+    vm_article.mount("#article");
     const script = document.createElement('script');
     script.src = 'https://lib.baomitu.com/mathjax/3.2.2/es5/tex-chtml.js';
     script.async = true;
@@ -52,4 +58,5 @@ window.onload = function () {
             }
         );
     }
+    nav_scroll($("#article_title").height());
 }

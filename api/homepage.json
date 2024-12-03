@@ -2,7 +2,9 @@
   "sign": [
     "已知花意，未闻花名，再遇花时，泪已千行...",
     "以声之色，塑花之形，将你之名，刻于我心...",
-    "但愿长醉不愿醒..."
+    "以此烈火，斩无不断，生生不息，薪火相传",
+    "To Be What You Want To Be",
+    "My all the beauty be blessed"
   ],
   "songs": [
     {
@@ -21,53 +23,31 @@
     }
   ],
   "articles": [
-    {
-      "title": "随感其一",
-      "introduction": "金樽清酒斗十千，玉盘珍羞直万钱。停杯投箸不能食，拔剑四顾心茫然。欲渡黄河冰塞川，将登太行雪满山。行路难，行路难，多歧路，今安在。长风破浪会有时，直挂云帆济沧海。",
+	{
+      "title": "计算机网络安全概述",
+      "introduction": "刑",
       "hasPicture": true,
       "picture": "./img/artimg/1.jpg",
-      "time": "2022.4.17",
-      "id": 0
+      "time": "2022.10.16",
+      "id": 2
     },
     {
-      "title": "STL中的集合",
-      "introduction": "STL中的集合分为Set(有序集)和Map(无序集)，他们均为STL中的容器类，可以使用迭代器。不支持数组表示，Set支持查找前驱和后驱，Map不支持。",
+      "title": "C++递推与暴力枚举",
+      "introduction": "没有什么是暴力解决不了的问题，如果有，那就加上递归",
+      "hasPicture": false,
+      "time": "2023.1.8",
+      "id": 3
+    },
+    {
+      "title": "写于 v1.0.1_DEV 发布",
+      "introduction": "我将继续前行。",
       "hasPicture": true,
-      "picture": "./img/artimg/1.jpg",
-      "time": "2022.4.17",
+      "picture": "./img/artimg/2.jpg",
+      "time": "2022.10.3",
       "id": 1
-    },
-    {
-      "title": "随感其三",
-      "introduction": "test",
-      "hasPicture": false,
-      "picture": "",
-      "time": "2022.4.13 13:20",
-      "id": 0
-    },
-    {
-      "title": "随感其四",
-      "introduction": "test",
-      "hasPicture": false,
-      "picture": "",
-      "time": "2022.5.16 13:20",
-      "id": 0
-    },
-    {
-      "title": "随感其五",
-      "introduction": "test",
-      "hasPicture": false,
-      "picture": "",
-      "time": "2022.7.17 13:20",
-      "id": 0
     }
   ],
   "kinds": [
-    {
-      "name": "随感",
-      "id": 1,
-      "num": 1
-    },
     {
       "name": "技术",
       "id": 1,
@@ -75,63 +55,42 @@
     },
     {
       "name": "发布",
-      "id": 1,
-      "num": 3
+      "id": 2,
+      "num": 1
     },
     {
-      "name": "文艺",
-      "id": 1,
-      "num": 999
+      "name": "随感",
+      "id": 3,
+      "num": 1
     }
   ],
   "lists": [
     {
-      "name": "list1",
+      "name": "全部",
       "content": [
+		{"title":"计算机网络安全概述",
+        "id":2
+		},
         {
-          "title": "t1",
-          "id": 0
+          "title": "C++递推与暴力枚举",
+          "id": 3
         },
         {
-          "title": "t1",
-          "id": 0
-        },
-        {
-          "title": "t1",
-          "id": 0
-        }
-      ]
-    },
-    {
-      "name": "list1",
-      "content": [
-        {
-          "title": "t1",
-          "id": 0
-        },
-        {
-          "title": "t1",
-          "id": 0
-        },
-        {
-          "title": "t1",
-          "id": 0
+          "title": "写于 v1.0.1_DEV 发布",
+          "id": 1
         }
       ]
     }
   ],
   "backimg": [
     {
-      "img": "./img/backimg/1.jpg",
+      "img":"./img/backimg/1.jpg",
       "color": "#000000"
-    },
-    {
-      "img": "./img/backimg/2.jpg",
+    },{
+      "img":"./img/backimg/2.jpg",
       "color": "#F3F3F3"
-    },
-    {
-      "img": "./img/backimg/3.jpg",
+    },{
+      "img":"./img/backimg/3.jpg",
       "color": "#F3F3F3"
-    }
-  ]
+    }]
 }

@@ -9,7 +9,14 @@ footer > p {
 footer > p > a {
     text-decoration: none;
 }
+a {
+    color: var(--bs-body-color);
+    text-decoration: none;
+}
 
+a:hover {
+    color: black;
+}
 p, h1, h2, h3, li, h4, h5, h6 {
     font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
     'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',

@@ -108,9 +108,8 @@ div.listElem:last-child {
     padding: 5px 15px;
 }
 
-#rightBar > #kinds {
-    margin-right: 0;
-    margin-left: 0;
+#rightBar > div{
+    margin: 15px;
 }
 
 #kinds li.kind {
@@ -147,3 +146,8 @@ div.listElem:last-child {
     border-radius: 30px;
     padding: 5px 5px 15px;
 }
+
+.pull-right{
+    float: right;
+}
+

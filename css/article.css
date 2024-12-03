@@ -34,8 +34,11 @@
     color: rgb(233, 233, 233);
 }
 
-#article_title span {
+#article_title span,a {
     color: rgb(233, 233, 233);
     margin-right: 10px;
     margin-left: 10px;
+}
+#article_title a:hover {
+    color: rgb(255,255,255);
 }
