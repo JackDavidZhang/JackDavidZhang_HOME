@@ -50,11 +50,26 @@ p, ul, li, ol, a, del {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.4s ease;
+    display: block;
 }
 
 .card:hover {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 }
+
+.navbar-hidden{
+    top: -100px;
+    transition: top 0.5s;
+}
+
+.navbar-visible {
+    top: 0;
+    transition: top 0.5s;
+}
+.navbar{
+    background-color: #FFFFFF;
+}
+
 
 #articleContainer {
     padding: 0;
@@ -97,7 +112,7 @@ p, ul, li, ol, a, del {
     margin-right: 5px;
     margin-bottom: 10px;
     width: 25%;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 10px;
 }
 

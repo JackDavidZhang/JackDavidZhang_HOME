@@ -8,16 +8,49 @@
 <head>
     <meta charset="utf-8"/>
     <title>ZTsubaki HOME</title>
-    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.js" type="application/javascript"></script>
-    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/js/bootstrap.js" type="application/javascript"></script>
-    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/css/bootstrap.css" type="text/css" rel="stylesheet" />
-    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.js" type="application/javascript"></script>
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.js"
+            type="application/javascript"></script>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/js/bootstrap.js"
+            type="application/javascript"></script>
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/css/bootstrap.css" rel="stylesheet"
+          type="text/css"/>
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.js"
+            type="application/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet"/>
     <link href="css/index.css" rel="stylesheet"/>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-hidden">
+    <div class="container-fluid">
+        <a class="navbar-brand">ZTsuabki</a>
+        <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">主页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">文章</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdownMenuLink"
+                       role="button">
+                        分类
+                    </a>
+                    <ul class="dropdown-menu" id="navbar_kinds">
+                        <li><a v-for="kind in kinds" class="dropdown-item" v-bind:href="kind.url">{{kind.name}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <div id="title">
     <div>
         <h1>ZTsubaki</h1>
@@ -67,11 +100,11 @@
                 <h4>{{date.y}}年{{date.m}}月{{date.d}}日 {{date.x}}</h4>
                 <h3>{{date.h}}:{{date.min}}</h3>
             </div>
-            <div id="kinds">
+            <div id="kinds" class="vm_kinds">
                 <ul>
                     <li class="kind card" v-for="(kind) in kinds">
-                        <a v-bind:href="kind.url">{{kind.name}}</a>
-                        <span class="badge pull-right">{{kind.num}}</span>
+                        <a v-bind:href="kind.url">{{kind.name}}
+                            <span class="badge bg-secondary pull-right rounded-pill">{{kind.num}}</span></a>
                     </li>
                 </ul>
             </div>
@@ -81,10 +114,9 @@
 <footer>
     <p>Copyright &copy ZTsubaki</p>
     <p>2024 @ ZTsuabki</p>
-    <p><a href="./article.html?id=0">关于</a>|<a href="https://github.com/JackDavidZhang/JackDavidZhang_HOME/">GitHub</a>
+    <p><a href="./article.html?id=0">关于</a>|<a
+            href="https://github.com/JackDavidZhang/JackDavidZhang_HOME/">GitHub</a>
     </p>
 </footer>
-<script src="js/main.js"></script>
-<script src="js/index.js"></script>
 </body>
 </html>

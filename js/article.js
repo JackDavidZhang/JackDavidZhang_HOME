@@ -23,7 +23,6 @@ $.ajax({
     },
     async: false
 });
-$("head").append("<link href=\"" + re.data.stylesheet + "\" rel=\"stylesheet\"/>");
 window.onload = function () {
     let vm_title = Vue.createApp(
         {
