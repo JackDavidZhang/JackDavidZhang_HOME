@@ -1,49 +1,31 @@
-re = {
-    "name": "",
-    "sum": 0,
-    "articles": [
-        {
-            "title": " ",
-            "introduction": " ",
-            "hasPicture": "false",
-            "picture": " ",
-            "time": " ",
-            "id": 0
-        },
-        {
-            "title": " ",
-            "introduction": " ",
-            "hasPicture": false,
-            "picture": "",
-            "time": " ",
-            "id": 0
-        }
-    ]
-}
+let resultKind;
 
 $.ajax({
     url: "./api/kind/" + GetQueryString("id") + ".json", dataType: 'json', success: function (result) {
-        re = $.parseJSON(JSON.stringify(result));
+        resultKind = $.parseJSON(JSON.stringify(result));
     }, error: function (result) {
         //location.replace("./error.html?errorCode=" + result.status);
     },
     async: false
 });
 
-let vm_article;
-let vm_body;
-
 window.onload = function () {
-    vm_article = new Vue({
-        el: "#vm_el",
-        data: {
-            title: re.name,
-        }
-    });
-    vm_body = new Vue({
-        el: "#kind_body",
+    Vue.createApp({
         data: function () {
-            return re;
+            return {title: resultKind.name};
         }
-    });
+    }).mount("#vm_title");
+    let articles = resultKind.articles;
+    for (article in articles) {
+        articles[article].url = "./article.html?id=" + articles[article].id;
+    }
+    Vue.createApp({
+        data: function () {
+            return {
+                name: resultKind.name,
+                sum: resultKind.sum,
+                articles: articles
+            };
+        }
+    }).mount("#vm");
 }

@@ -1,12 +1,14 @@
 {
   "name": "随感",
   "sum": 1,
-  "articles": [{
-    "title": "写于 v1.0.1_DEV 发布",
-    "introduction": "我将继续前行。",
-    "hasPicture": true,
-    "picture": "./img/artimg/2.jpg",
-    "time": "2022.10.3",
-    "id": 1
-  }]
+  "articles": [
+    {
+      "title": "写于 v1.0.1_DEV 发布",
+      "introduction": "我将继续前行。",
+      "hasPicture": true,
+      "picture": "./img/artimg/2.jpg",
+      "time": "2022.10.3",
+      "id": 1
+    }
+  ]
 }

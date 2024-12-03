@@ -9,37 +9,53 @@ if (/AppleWebKit.*Mobile/i.test(navigator.userAgent)
 } else {
     $("head").append("<script crossorigin=\"anonymous\" integrity=\"sha384-jqrAC88GWDVskFFYTrKSijc+nq9u3kmA1cn4W0iYANXdH1BFtWKyb/YR8RijuWzn\" src=\"https://lib.baomitu.com/skrollr/0.6.30/skrollr.min.js\"></script>");
 }
-var re = {data: {title: "", stylesheet: ""}};
+var articleResult;
 let id = GetQueryString("id");
 $.ajax({
     url: "./api/article/" + id + ".json", dataType: 'json', success: function (result) {
-        re = $.parseJSON(JSON.stringify(result));
-        if(re.data.styleSheet !== undefined) {
-            $("head").append("<link herf=\'"+re.data.styleSheet+"\' rel='stylesheet'>");
+        articleResult = $.parseJSON(JSON.stringify(result));
+        if (articleResult.data.styleSheet !== undefined) {
+            $("head").append("<link herf=\'" + articleResult.data.styleSheet + "\' rel='stylesheet'>");
         }
-        re.data.kurl = "./kind.html?id="+re.data.kid;
+        articleResult.data.kurl = "./kind.html?id=" + articleResult.data.kid;
+    }, error: function (result) {
+        //location.replace("./error.html?errorCode=" + result.status);
+    },
+    async: false
+});
+let resultKinds;
+$.ajax({
+    url: "./api/kind/kinds.json", dataType: 'json', success: function (result) {
+        resultKinds = $.parseJSON(JSON.stringify(result));
     }, error: function (result) {
         //location.replace("./error.html?errorCode=" + result.status);
     },
     async: false
 });
 window.onload = function () {
-    let vm_title = Vue.createApp(
+    Vue.createApp(
         {
-            el: "#title",
             data() {
-                return {title: re.data.title};
+                return {title: articleResult.data.title};
             }
         }
-    );
-    vm_title.mount("#title");
-    let vm_article = Vue.createApp({
-        el: "#article",
+    ).mount("#vm_title");
+    Vue.createApp({
         data() {
-            return re.data;
+            let kinds = resultKinds.kinds;
+            for (kind in kinds) {
+                kinds[kind].url = "./kind.html?id=" + kinds[kind].id;
+            }
+            return {
+                title: articleResult.data.title,
+                kind: articleResult.data.kind,
+                kinds: kinds,
+                kurl: "./kind.html?id=" + articleResult.data.kid,
+                date: articleResult.data.date,
+                content: articleResult.data.content,
+            };
         }
-    });
-    vm_article.mount("#article");
+    }).mount("#vm");
     const script = document.createElement('script');
     script.src = 'https://lib.baomitu.com/mathjax/3.2.2/es5/tex-chtml.js';
     script.async = true;

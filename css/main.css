@@ -9,6 +9,7 @@ footer > p {
 footer > p > a {
     text-decoration: none;
 }
+
 a {
     color: var(--bs-body-color);
     text-decoration: none;
@@ -17,6 +18,7 @@ a {
 a:hover {
     color: black;
 }
+
 p, h1, h2, h3, li, h4, h5, h6 {
     font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
     'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',
@@ -57,7 +59,7 @@ p, ul, li, ol, a, del {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-hidden{
+.navbar-hidden {
     top: -100px;
     transition: top 0.5s;
 }
@@ -66,7 +68,8 @@ p, ul, li, ol, a, del {
     top: 0;
     transition: top 0.5s;
 }
-.navbar{
+
+.navbar {
     background-color: #FFFFFF;
 }
 
