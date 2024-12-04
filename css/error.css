@@ -1,0 +1,16 @@
+#text {
+    font-size: 72px !important;
+}
+
+#description {
+    font-weight: 400;
+    font-size: 22px !important;
+}
+
+span, p {
+    width: 100%;
+    text-align: center;
+    color: gray;
+    font-size: 20px;
+    font-weight: normal;
+}

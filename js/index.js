@@ -1,90 +1,86 @@
-let re = {
-    sign: [],
-    songs: [],
-    articles: [],
-    kinds: [],
-    lists: [],
-    backimg: [{img: "", color: ""}]
-};
+let resultIndex;
+let resultArticles;
+let resultKinds;
 $.ajax({
-    url: "./api/homepage.json", dataType: 'json', success: function (result) {
-        re = $.parseJSON(JSON.stringify(result));
+    url: api_address + "/index.json", dataType: 'json', success: function (result) {
+        resultIndex = $.parseJSON(JSON.stringify(result));
+    }, error: function (result) {
+        location.replace("./error.html?errorCode=" + result.status);
+    },
+    async: false
+});
+$.ajax({
+    url: api_address + "/article/articles.json", dataType: 'json', success: function (result) {
+        resultArticles = $.parseJSON(JSON.stringify(result));
+    }, error: function (result) {
+        location.replace("./error.html?errorCode=" + result.status);
+    },
+    async: false
+});
+$.ajax({
+    url: "./api/kind/kinds.json", dataType: 'json', success: function (result) {
+        resultKinds = $.parseJSON(JSON.stringify(result));
     }, error: function (result) {
         location.replace("./error.html?errorCode=" + result.status);
     },
     async: false
 });
 window.onload = function () {
-    var img_num = rnd(new Date().getTime()) % re.backimg.length;
-    $("#title").css("background-image", "url(" + re.backimg[img_num].img + ")").css("color", re.backimg[img_num].color);
-    Vue.filter("number", function (value) {
-        return value < 10 ? "0" + value : value;
-    });
-    Vue.filter("articleUrl", function (value) {
-        return "./article.html?id=" + value;
-    });
-    Vue.filter("kindUrl", function (value) {
-        return "./kind.html?id=" + value;
-    });
-    const vm_content = new Vue({
-        el: "#dailyCard",
-        data: {
-            date: {y: "1970", m: "1", d: "1", h: "0", min: "0", s: "0", x: "yi"},
-        },
-        mounted: function () {
-            changeDate(this);
-            this.timer = setInterval(changeDate, 1000, this);
-        },
-        beforeDestroy: function () {
-            if (this.timer) {
-                clearInterval(this.timer);
+    const img_num = rand() % resultIndex.backimg.length;
+    $("#title").css("background-image", "url(" + resultIndex.backimg[img_num].img + ")").css("color", resultIndex.backimg[img_num].color);
+    Vue.createApp(
+        {
+            data() {
+                let song = resultIndex.songs[rand_day() % resultIndex.songs.length];
+                let lists = resultIndex.lists;
+                for (list in lists) {
+                    for (listContent in lists[list].content) {
+                        lists[list].content[listContent].url = "./article.html?id=" + lists[list].content[listContent].id;
+                    }
+                }
+                let sign = resultIndex.sign[rand() % resultIndex.sign.length];
+                let articles = [];
+                let i = 0;
+                for (article in resultArticles.articles) {
+                    if (resultArticles.articles[article].recommend) {
+                        articles[i] = resultArticles.articles[article];
+                        articles[i++].url = "./article.html?id=" + resultArticles.articles[article].id;
+                    }
+                }
+                let kinds = resultKinds.kinds;
+                for (kind in kinds) {
+                    kinds[kind].url = "./kind.html?id=" + kinds[kind].id;
+                }
+                return {
+                    sign: sign,
+                    song: song,
+                    lists: lists,
+                    articles: articles,
+                    kinds: kinds,
+                    date: {y: "1970", m: "1", d: "1", h: "0", min: "0", s: "0", x: "周四"}
+                };
+            },
+            mounted: function () {
+                changeDate(this);
+                this.timer = setInterval(changeDate, 1000, this);
+            },
+            onBeforeUnmount: function () {
+                if (this.timer) {
+                    clearInterval(this.timer);
+                }
             }
-        },
-    });
-    const vm_title = new Vue({
-        el: "#title",
-        data() {
-            let rand = rnd(new Date().getTime());
-            rand %= re.sign.length;
-            return {sign: re.sign[rand]};
-        },
-    });
-    const vm_musicCard = new Vue({
-        el: "#musicCard",
-        data() {
-            d = new Date();
-            seed = d.getFullYear() * 10000 + d.getMonth() * 100 + d.getDay();
-            let rand = rnd(seed);
-            rand %= re.songs.length;
-            return re.songs[rand + 1];
         }
-    });
-    const vm_articleContainer = new Vue({
-        el: "#articleContainer",
-        data() {
-            return {articles: re.articles};
-        }
-    });
-    const vm_kinds = new Vue({
-        el: "#kinds",
-        data() {
-            return {kinds: re.kinds};
-        }
-    });
-    const vm_list = new Vue({
-        el: "#list",
-        data() {
-            return {lists: re.lists};
-        }
-    });
+    ).mount("#vm");
     $("#list div>h4").click(function () {
         $(this).parent().find("div:visible").slideUp(200);
         $(this).parent().find("div:hidden").slideDown(200);
         $(this).parent().siblings().find("div").slideUp(200);
     });
-}
+    nav_scroll($("#title").height());
+    fade_down($("#loading"));
+};
 
-function changeDate(v) {
+function changeDate(vm) {
     const d = new Date();
     const i = [];
     i[0] = "周日";
@@ -94,15 +90,13 @@ function changeDate(v) {
     i[4] = "周四";
     i[5] = "周五";
     i[6] = "周六";
-    v.date.y = d.getFullYear();
-    v.date.m = d.getMonth();
-    v.date.d = d.getDate();
-    v.date.h = d.getHours();
-    v.date.min = d.getMinutes();
-    v.date.x = i[d.getDay()];
+    vm.date.y = d.getFullYear();
+    vm.date.m = d.getMonth();
+    vm.date.d = d.getDate();
+    vm.date.h = d.getHours();
+    vm.date.min = d.getMinutes();
+    vm.date.x = i[d.getDay()];
+    if (vm.date.h < 10) vm.date.h = '0' + vm.date.h.toString();
+    if (vm.date.min < 10) vm.date.min = '0' + vm.date.min.toString();
 }
 
-function rnd(seed) {
-    seed = (seed * 9301 + 49297) % 233283;
-    return seed;
-}

@@ -1,0 +1,21 @@
+{
+  "name": "技术",
+  "sum": 2,
+  "articles": [
+    {
+      "title": "计算机网络安全概述",
+      "introduction": "刑",
+      "hasPicture": "ture",
+      "picture": "./img/artimg/1.jpg",
+      "time": "2022.10.16",
+      "id": 2
+    },
+    {
+      "title": "C++递归与暴力枚举",
+      "introduction": "没有什么是暴力解决不了的问题，如果有，那就加上递归",
+      "hasPicture": "false",
+      "time": "2023.1.8",
+      "id": 3
+    }
+  ]
+}

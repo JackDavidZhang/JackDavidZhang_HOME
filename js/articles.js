@@ -1,8 +1,8 @@
-let resultKind;
+let resultArticles;
 
 $.ajax({
-    url: api_address + "/kind/" + GetQueryString("id") + ".json", dataType: 'json', success: function (result) {
-        resultKind = $.parseJSON(JSON.stringify(result));
+    url: api_address + "/article/articles.json", dataType: 'json', success: function (result) {
+        resultArticles = $.parseJSON(JSON.stringify(result));
     }, error: function (result) {
         location.replace("./error.html?errorCode=" + result.status);
     },
@@ -18,12 +18,7 @@ $.ajax({
     async: false
 });
 window.onload = function () {
-    Vue.createApp({
-        data: function () {
-            return {title: resultKind.name};
-        }
-    }).mount("#vm_title");
-    let articles = resultKind.articles;
+    let articles = resultArticles.articles;
     for (article in articles) {
         articles[article].url = "./article.html?id=" + articles[article].id;
     }
@@ -34,9 +29,8 @@ window.onload = function () {
     Vue.createApp({
         data: function () {
             return {
-                name: resultKind.name,
                 kinds: kinds,
-                sum: resultKind.sum,
+                sum: resultArticles.articles.length,
                 articles: articles
             };
         }

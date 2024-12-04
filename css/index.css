@@ -1,11 +1,3 @@
-body {
-    background-color: #f3f3f3;
-}
-
-.card {
-    background-color: white;
-}
-
 #title {
     background-size: cover;
     background-position: center;
@@ -34,21 +26,10 @@ h3, h4 {
     font-style: italic;
 }
 
-.card {
-    margin: 15px 0;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.4s ease;
-}
-
-.card:hover {
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-}
-
 #content {
-    margin-left: 75px;
-    margin-right: 75px;
-    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
 }
 
 #musicCard > h3, #musicCard > p {
@@ -115,71 +96,8 @@ div.listElem:last-child {
     color: black;
 }
 
-#articleContainer {
-    padding: 0;
-}
-
-.articleCard {
-    margin: 15px;
-    padding: 5px 15px;
-}
-
-.articleCard > h3 {
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.articleCard > img + div > h1 {
-    margin-top: 15px;
-}
-
-.articleCard > div > h1 > a {
-    font-size: 32px;
-}
-
-.articleCard > div > h1 + p {
-    font-weight: 300;
-}
-
-.articleCard > div + h3 {
-    font-size: 16px;
-    line-height: 22px;
-}
-
 #list h4 {
     font-weight: 400;
-}
-
-.articleCard a {
-    color: black;
-    text-decoration: none;
-    font-weight: 400;
-}
-
-.articleCard img {
-    margin-right: 5px;
-    margin-bottom: 10px;
-    width: 25%;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.articleCard:first-child img {
-    width: 100%;
-    border-radius: 30px;
-    padding: 5px 5px 15px;
-}
-
-.articleCard > img + div {
-    display: inline-grid;
-}
-
-.articleCard:first-child > img + div > h1 {
-    margin-top: auto;
-}
-
-.articleCard:first-child > img + div {
-    display: block;
 }
 
 #rightBar {
@@ -190,9 +108,8 @@ div.listElem:last-child {
     padding: 5px 15px;
 }
 
-#rightBar > #kinds {
-    margin-right: 0;
-    margin-left: 0;
+#rightBar > div {
+    margin: 15px;
 }
 
 #kinds li.kind {
@@ -200,7 +117,7 @@ div.listElem:last-child {
     transition: font-weight 5s ease;
 }
 
-#kinds li.kind:hover{
+#kinds li.kind:hover {
     font-weight: 100;
 }
 
@@ -214,3 +131,23 @@ div.listElem:last-child {
     color: black;
     text-decoration: none;
 }
+
+.articleCard:first-child > img + div > h1 {
+    margin-top: auto;
+}
+
+.articleCard:first-child > img + div {
+    display: block;
+}
+
+
+.articleCard:first-child img {
+    width: 100%;
+    border-radius: 30px;
+    padding: 5px 5px 15px;
+}
+
+.pull-right {
+    float: right;
+}
+

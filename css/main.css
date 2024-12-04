@@ -1,3 +1,7 @@
+body {
+    background-color: #f3f3f3;
+}
+
 footer > p {
     text-align: center;
 }
@@ -6,7 +10,16 @@ footer > p > a {
     text-decoration: none;
 }
 
-p, h1, h2, h3, li, h4, h5, h6 {
+a {
+    color: var(--bs-body-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}
+
+p, h1, h2, h3, li, h4, h5, h6, span {
     font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
     'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',
     'Microsoft JhengHei', 'Source Han Sans SC', 'Noto Sans CJK SC',
@@ -14,12 +27,8 @@ p, h1, h2, h3, li, h4, h5, h6 {
     'WenQuanYi Micro Hei', SimSun, sans-serif;
 }
 
-code span {
-    font-family: Consolas, 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
-    'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',
-    'Microsoft JhengHei', 'Source Han Sans SC', 'Noto Sans CJK SC',
-    'Source Han Sans CN', 'Source Han Sans TC', 'Noto Sans CJK TC',
-    'WenQuanYi Micro Hei', SimSun, sans-serif;
+code span, code {
+    font-family: Consolas, Menlo, Monaco, "Courier New", monospace;
 }
 
 pre {
@@ -31,4 +40,120 @@ p, ul, li, ol, a, del {
     font-weight: normal;
     font-size: 16px;
     line-height: 26px;
+}
+
+.card {
+    background-color: white;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.4s ease;
+    display: block;
+}
+
+.card:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-hidden {
+    top: -100px;
+    transition: top 0.5s;
+}
+
+.navbar-visible {
+    top: 0;
+    transition: top 0.5s;
+}
+
+.navbar {
+    background-color: #FFFFFF;
+}
+
+
+#articleContainer {
+    padding: 0;
+}
+
+.articleCard {
+    margin: 15px;
+    padding: 5px 15px;
+}
+
+.articleCard > h3 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.articleCard > img + div > h1 {
+    margin-top: 15px;
+}
+
+.articleCard > div > h1 > a {
+    font-size: 32px;
+}
+
+.articleCard > div > h1 + p {
+    font-weight: 300;
+}
+
+.articleCard > div + h3 {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.articleCard a {
+    color: black;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.articleCard img {
+    margin-right: 5px;
+    margin-bottom: 10px;
+    width: 25%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.articleCard > img + div {
+    display: inline-grid;
+}
+
+#article_title {
+    padding-top: 320px;
+    padding-bottom: 160px;
+    text-align: center;
+}
+
+#article_title h1 {
+    font-size: 50px;
+    font-weight: 300;
+    color: black;
+}
+
+#article_title span, #article_title a {
+    color: gray;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#article_title a:hover {
+    color: black;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f3f3f3;
+    z-index: 9999;
+    height: 100%;
+}
+
+#loading h1 {
+    height: 100%;
+    text-align: center;
+    padding-top: 20%;
+    filter: opacity(0.8);
 }

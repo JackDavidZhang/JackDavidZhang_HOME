@@ -2,12 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title class="vm_el">{{title}} - 分类 - JackDavidZhang</title>
+    <title id="vm_title">{{title}} - 分类 - JackDavidZhang</title>
+    <meta charset="utf-8"/>
+    <title>ZTsubaki HOME</title>
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"
+            type="application/javascript"></script>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/js/bootstrap.min.js"
+            type="application/javascript"></script>
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.prod.min.js"
+            type="application/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet"/>
-    <script src="js/kind.js"></script>
     <link href="css/kind.css" rel="stylesheet"/>
 </head>
 <body>
+<div id="loading">
+    <h1>LOADING...</h1>
+</div>
+<script src="js/main.js"></script>
+<script src="js/kind.js"></script>
+<div id="vm">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-visible">
+        <div class="container-fluid">
+            <a class="navbar-brand">ZTsuabki</a>
+            <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href=".">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./articles.html">文章</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#"
+                           id="navbarDropdownMenuLink"
+                           role="button">
+                            分类
+                        </a>
+                        <ul class="dropdown-menu" id="navbar_kinds">
+                            <li><a class="dropdown-item" v-bind:href="kind.url" v-for="kind in kinds">{{kind.name}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="kind_body">
 
+        <div id="article_title">
+            <h1>{{name}}</h1>
+            <p>共计{{sum}}项</p>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10" id="articleContainer">
+
+
+                <div class="card articleCard" v-for="(article) in articles">
+                    <img v-bind:src="article.picture" v-if="article.hasPicture"/>
+                    <div>
+                        <h1><a v-bind:href="article.url">{{article.title}}</a></h1>
+                        <p>{{article.time}}</p>
+                    </div>
+                    <h3>{{article.introduction}}</h3>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>
 </body>
+<footer>
+    <p>Copyright &copy ZTsubaki</p>
+    <p>2024 @ ZTsuabki</p>
+    <p><a href="./article.html?id=0">关于</a>|<a
+            href="https://github.com/JackDavidZhang/JackDavidZhang_HOME/">GitHub</a>
+    </p>
+</footer>
 </html>
