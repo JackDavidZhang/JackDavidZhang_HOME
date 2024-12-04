@@ -11,15 +11,24 @@
           type="text/css"/>
     <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.js"
             type="application/javascript"></script>
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js"
+            type="application/javascript">
+
+    </script>
+    <link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/dark.min.css"
+          rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet"/>
     <link href="css/article.css" rel="stylesheet"/>
-    <script src="js/main.js"></script>
-    <script src="js/article.js"></script>
 </head>
 <body>
+<div id="loading">
+    <h1>LOADING...</h1>
+</div>
+<script src="js/main.js"></script>
+<script src="js/article.js"></script>
 <div id="vm">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-hidden">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-visible">
         <div class="container-fluid">
             <a class="navbar-brand">ZTsuabki</a>
             <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
@@ -48,31 +57,28 @@
             </div>
         </div>
     </nav>
-    <div id="backimg"></div>
-    <div id="mainContainer">
-        <div class="container">
-            <div class="row" id="skrollr-body">
-                <div class="col-md-1"></div>
-                <div class="col-md-10" id="article">
-                    <div id="article_title">
-                        <h1>{{title}}</h1>
-                        <a v-bind:href="kurl">{{kind}}</a>
-                        <span>{{date}}</span>
-                    </div>
-                    <div id="content">
-                        <div v-html="content"></div>
-                    </div>
-
-                </div>
-                <div class="col-md-1"></div>
-            </div>
-            <footer>
-                <p>Copyright &copy ZTsubaki</p>
-                <p>2024 @ ZTsuabki</p>
-                <p><a href="./article.html?id=0">关于</a>|<a
-                        href="https://github.com/JackDavidZhang/JackDavidZhang_HOME/">GitHub</a></p>
-            </footer>
+    <div class="container">
+        <div id="article_title">
+            <h1>{{title}}</h1>
+            <a v-bind:href="kurl">{{kind}}</a>
+            <span>{{date}}</span>
         </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10" id="article">
+                <div class="card" id="content">
+                    <div v-html="content"></div>
+                </div>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <footer>
+            <p>Copyright &copy ZTsubaki</p>
+            <p>2024 @ ZTsuabki</p>
+            <p><a href="./article.html?id=0">关于</a>|<a
+                    href="https://github.com/JackDavidZhang/JackDavidZhang_HOME/">GitHub</a></p>
+        </footer>
     </div>
 </div>
 <script>

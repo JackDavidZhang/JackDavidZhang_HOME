@@ -15,20 +15,49 @@
             type="application/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet"/>
-    <script src="js/main.js"></script>
-    <script src="js/kind.js"></script>
     <link href="css/kind.css" rel="stylesheet"/>
 </head>
 <body>
+<div id="loading">
+    <h1>LOADING...</h1>
+</div>
+<script src="js/main.js"></script>
+<script src="js/kind.js"></script>
 <div id="vm">
-    <div class="container" id="kind_body">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <h1>{{name}}</h1>
-                <p>共计{{sum}}项</p>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-visible">
+        <div class="container-fluid">
+            <a class="navbar-brand">ZTsuabki</a>
+            <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href=".">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">文章</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#"
+                           id="navbarDropdownMenuLink"
+                           role="button">
+                            分类
+                        </a>
+                        <ul class="dropdown-menu" id="navbar_kinds">
+                            <li><a class="dropdown-item" v-bind:href="kind.url" v-for="kind in kinds">{{kind.name}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <div class="col-md-2"></div>
+        </div>
+    </nav>
+    <div class="container" id="kind_body">
+
+        <div id="article_title">
+            <h1>{{name}}</h1>
+            <p>共计{{sum}}项</p>
         </div>
         <div class="row">
             <div class="col-md-1"></div>

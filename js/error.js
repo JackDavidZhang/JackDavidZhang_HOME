@@ -5,6 +5,16 @@ function GetQueryString(name) {
     return null;
 }
 
+let resultKinds;
+$.ajax({
+    url: "./api/kind/kinds.json", dataType: 'json', success: function (result) {
+        resultKinds = $.parseJSON(JSON.stringify(result));
+    }, error: function (result) {
+        location.replace("./error.html?errorCode=" + result.status);
+    },
+    async: false
+});
+
 window.onload = function () {
     let errorTex = GetQueryString("errorCode");
     let errorDescribe;
@@ -39,4 +49,15 @@ window.onload = function () {
     }
     $("#text").text(errorTex);
     $("#description").text(errorDescribe);
+    let kinds = resultKinds.kinds;
+    for (kind in kinds) {
+        kinds[kind].url = "./kind.html?id=" + kinds[kind].id;
+    }
+    Vue.createApp({
+        data: function () {
+            return {
+                kinds: kinds,
+            };
+        }
+    }).mount("#vm");
 }

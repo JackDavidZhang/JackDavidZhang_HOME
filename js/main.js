@@ -69,3 +69,16 @@ function rand() {
     const date = new Date();
     return rnd(date.getMilliseconds());
 }
+
+function fade_down(item) {
+    let opacity = 0;
+    let timer = setInterval(function () {
+        if (opacity < 1) {
+            opacity += 0.02;
+            item.css("filter", "opacity(" + (opacity - 1) * (opacity - 1).toString() + ")");
+        } else {
+            item.remove();
+            clearInterval(timer);
+        }
+    }, 10);
+}

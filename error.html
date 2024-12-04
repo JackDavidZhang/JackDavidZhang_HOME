@@ -1,20 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Error - JackDavidZhang</title>
-    <script src="https://cdn.staticfile.org/jquery/3.6.1/jquery.min.js"></script>
+    <title>Error - ZTsubaki</title>
+
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.js"
+            type="application/javascript"></script>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/js/bootstrap.js"
+            type="application/javascript"></script>
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/css/bootstrap.css" rel="stylesheet"
+          type="text/css"/>
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.js"
+            type="application/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900" rel="stylesheet">
     <script src="js/error.js"></script>
     <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/error.css" rel="stylesheet"/>
 </head>
 <body>
-<h1 id="text" style="text-align:center;font-weight: normal;font-size: 72px"></h1>
-<h2 id="description" style="text-align: center;font-size: 24px;font-weight: lighter;"></h2>
-<br/>
-<span style="font-size: 16px;font-weight: normal">出错了...</span>
-<span style="font-size: 16px;font-weight: lighter;font-family: Arial,serif">..(｡•ˇ‸ˇ•｡)…</span>
-<br/>
-<span style="font-size: 16px;font-weight: normal">不干啦！</span>
-<span style="font-size: 16px;font-weight: lighter;font-family: Arial,serif">((╯>д<)╯⁽˙³˙⁾)</span>
+<div id="vm">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-visible">
+        <div class="container-fluid">
+            <a class="navbar-brand">ZTsuabki</a>
+            <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href=".">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">文章</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                           id="navbarDropdownMenuLink"
+                           role="button">
+                            分类
+                        </a>
+                        <ul class="dropdown-menu" id="navbar_kinds">
+                            <li><a class="dropdown-item" v-bind:href="kind.url" v-for="kind in kinds">{{kind.name}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="article_title">
+        <h1 id="text"></h1>
+        <span id="description"></span>
+    </div>
+    <p>
+        <span>出错了...</span>
+        <span style="font-family: Arial,serif">..(｡•ˇ‸ˇ•｡)…</span>
+    </p>
+    <p><span>不干啦！</span>
+        <span style="font-family: Arial,serif">((╯>д<)╯⁽˙³˙⁾)</span></p>
+</div>
 </body>
 </html>

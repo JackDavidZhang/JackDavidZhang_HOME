@@ -73,7 +73,8 @@ window.onload = function () {
         $(this).parent().siblings().find("div").slideUp(200);
     });
     nav_scroll($("#title").height());
-}
+    fade_down($("#loading"));
+};
 
 function changeDate(vm) {
     const d = new Date();
