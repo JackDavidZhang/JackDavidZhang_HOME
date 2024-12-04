@@ -2,18 +2,18 @@ let resultIndex;
 let resultArticles;
 let resultKinds;
 $.ajax({
-    url: "./api/index.json", dataType: 'json', success: function (result) {
+    url: api_address + "/index.json", dataType: 'json', success: function (result) {
         resultIndex = $.parseJSON(JSON.stringify(result));
     }, error: function (result) {
-        //location.replace("./error.html?errorCode=" + result.status);
+        location.replace("./error.html?errorCode=" + result.status);
     },
     async: false
 });
 $.ajax({
-    url: "./api/article/articles.json", dataType: 'json', success: function (result) {
+    url: api_address + "/article/articles.json", dataType: 'json', success: function (result) {
         resultArticles = $.parseJSON(JSON.stringify(result));
     }, error: function (result) {
-        //location.replace("./error.html?errorCode=" + result.status);
+        location.replace("./error.html?errorCode=" + result.status);
     },
     async: false
 });
@@ -21,7 +21,7 @@ $.ajax({
     url: "./api/kind/kinds.json", dataType: 'json', success: function (result) {
         resultKinds = $.parseJSON(JSON.stringify(result));
     }, error: function (result) {
-        //location.replace("./error.html?errorCode=" + result.status);
+        location.replace("./error.html?errorCode=" + result.status);
     },
     async: false
 });
@@ -39,9 +39,13 @@ window.onload = function () {
                     }
                 }
                 let sign = resultIndex.sign[rand() % resultIndex.sign.length];
-                let articles = resultArticles.articles;
-                for (article in articles) {
-                    articles[article].url = "./article.html?id=" + articles[article].id;
+                let articles = [];
+                let i = 0;
+                for (article in resultArticles.articles) {
+                    if (resultArticles.articles[article].recommend) {
+                        articles[i] = resultArticles.articles[article];
+                        articles[i++].url = "./article.html?id=" + resultArticles.articles[article].id;
+                    }
                 }
                 let kinds = resultKinds.kinds;
                 for (kind in kinds) {

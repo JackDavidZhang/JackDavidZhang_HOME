@@ -7,7 +7,7 @@ function GetQueryString(name) {
 
 let resultKinds;
 $.ajax({
-    url: "./api/kind/kinds.json", dataType: 'json', success: function (result) {
+    url: api_address + "/kind/kinds.json", dataType: 'json', success: function (result) {
         resultKinds = $.parseJSON(JSON.stringify(result));
     }, error: function (result) {
         location.replace("./error.html?errorCode=" + result.status);
