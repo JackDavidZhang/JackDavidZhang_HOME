@@ -62,11 +62,11 @@
             <h1>ZTsubaki</h1>
             <p>{{sign}}</p>
         </div>
-        <div style="height: 10px;padding: 0;margin: 0;backdrop-filter: blur(2px);"></div>
+        <div style="height: 10px;padding: 0;margin-top: 28px;backdrop-filter: blur(1px);"></div>
     </div>
     <div class="container" id="content">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-lg-2 col-md-12">
                 <div class="card" id="musicCard">
                     <h3>{{song.name}}</h3>
                     <p>{{song.album}}</p>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8" id="articleContainer">
+            <div class="col-lg-8 col-md-12" id="articleContainer">
                 <div class="card articleCard" v-for="(article) in articles">
                     <img v-bind:src="article.picture" v-if="article.hasPicture"/>
                     <div>
@@ -101,7 +101,7 @@
                     <h3>{{article.introduction}}</h3>
                 </div>
             </div>
-            <div class="col-md-2" id="rightBar">
+            <div class="col-lg-2 col-md-12" id="rightBar">
                 <div class="card" id="dailyCard">
                     <h4>{{date.y}}年{{date.m}}月{{date.d}}日 {{date.x}}</h4>
                     <h3>{{date.h}}:{{date.min}}</h3>
